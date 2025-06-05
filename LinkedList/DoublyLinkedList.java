@@ -122,7 +122,7 @@ public class DoublyLinkedList {
         dl.addLast(93);
         System.out.println("Size:" + size + " Head:" + head.data + " Tail:" + tail.data);
         System.out.println("Removed node: " + dl.removeFirst() + " size: " + size + " New head: " + head.data);
-        dl.head = null;
+        DoublyLinkedList.head = null;
         System.out.println("Removed element from last: "+dl.remvoveLast());
     }
 }

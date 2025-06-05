@@ -1,3 +1,5 @@
+// count all substrings that contains a, b ,c atleast once
+
 class June5 {
     public static void main(String[] args) {
         Solution sol = new Solution();
@@ -8,7 +10,7 @@ class June5 {
 }
 
 class Solution {
-    public static int countSubstring(String s) {
+    public int countSubstring(String s) {
         // code here
 
         int lastSeen[] = new int[3];
