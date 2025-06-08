@@ -1,6 +1,0 @@
-      Scanner var1 = new Scanner(System.in);
-      int[][] var2 = new int[4][4];
-      boolean var3 = true;
-
-      int var4;
-      for(var4 = 0; var4 < var2.length; ++var4) {
