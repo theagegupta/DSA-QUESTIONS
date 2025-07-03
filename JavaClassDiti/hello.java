@@ -1,4 +1,4 @@
-class hello {
+public class  hello {
 
     int x = 10; // class variable - defined inside a class
 
@@ -6,10 +6,13 @@ class hello {
     // Abstraction
     // access specifier - default , public , private , protected
     // class has two things - data,
+
     public static void main(String[] args) {
         // class = data(class variables) + behavious (metshod)
         // behavious = what something can do (function - methods)
-
+        
+        Application obj  = new Application("Diti kuchiya","Alampur", 4234234 ); 
+        Application obj2  = new Application("Ayush kuchiya","Alampur", 4234234 ); 
         System.out.println("Hello");
 
 
@@ -33,14 +36,13 @@ class Application
 
     int add()
     {
-        return x+y; 
+        // return x+y
+        return 0; 
     }
 }
 
 // static variable - created using Static keyword and it is same for all the instances or objects. It is associated with the class not the object. 
 
-Application obj  = new Application("Diti kuchiya","Alampur", 4234234 ); 
-Application obj2  = new Application("Ayush kuchiya","Alampur", 4234234 ); 
 
 class HashMap
 {
