@@ -1,8 +1,6 @@
 import java.util.*;
 
-public class HashMapCode {
-
-    static class HashMap<K, V> {
+     class HashMap<K, V> {
 
         private class Node {
             K key;
@@ -156,6 +154,10 @@ public class HashMapCode {
         }
     }
 
+
+
+    
+public class HashMapCode {
     public static void main(String[] args) {
 
         HashMap<String, Integer> hm = new HashMap<>();
