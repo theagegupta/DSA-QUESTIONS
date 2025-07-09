@@ -76,7 +76,7 @@ import java.util.*;
                 // Key doesn't exist, create a new node and insert it
                 Node newNode = new Node(key, value);
                 buckets[bi].add(newNode); // Add node to the linked list at index bi
-                N++;
+                N++; // No of nodes 
             }
 
             double lambda = (double) N / size; // Load factor
