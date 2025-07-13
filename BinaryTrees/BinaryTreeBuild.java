@@ -1,5 +1,8 @@
 // package BinaryTrees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 class BinaryTreeBuild {
 
     static class Node {
@@ -62,6 +65,51 @@ class BinaryTreeBuild {
             System.out.print(root.data + " ");
         }
 
+        public void levelOrder(Node root) {
+            Queue<Node> q = new LinkedList<>();
+            q.add(root);
+            q.add(null);
+            while (!q.isEmpty()) 
+            {
+                Node curr = q.remove();
+
+                if (curr == null) {
+                    System.out.println();
+                
+                    if (q.isEmpty()) {
+                        break;
+                    }
+
+                    else {
+                        q.add(null);
+                    }
+                }
+
+                else {
+                    if (curr.left != null) {
+                        q.add(curr.left);
+                    }
+
+                    if (curr.right != null) {
+                        q.add(curr.right);
+                    }
+
+                    System.out.print(curr.data + " ");
+                }
+
+            }
+        }
+
+        public int height(Node root)
+        {
+            if(root == null)
+            {
+                return 0; 
+            }
+
+            int currHeight = Math.max(height(root.left), height(root.right)) + 1; 
+            return currHeight; 
+        }
     }
 
     public static void main(String[] args) {
@@ -75,5 +123,8 @@ class BinaryTreeBuild {
         bt.inOrder(root);
         System.out.println();
         bt.postOrder(root);
+        System.out.println();
+        bt.levelOrder(root);
+        System.out.println("Height of the tree is : "+bt.height(root));
     }
 }
