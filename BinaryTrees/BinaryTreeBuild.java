@@ -69,13 +69,12 @@ class BinaryTreeBuild {
             Queue<Node> q = new LinkedList<>();
             q.add(root);
             q.add(null);
-            while (!q.isEmpty()) 
-            {
+            while (!q.isEmpty()) {
                 Node curr = q.remove();
 
                 if (curr == null) {
                     System.out.println();
-                
+
                     if (q.isEmpty()) {
                         break;
                     }
@@ -100,20 +99,71 @@ class BinaryTreeBuild {
             }
         }
 
-        public int height(Node root)
-        {
-            if(root == null)
-            {
-                return 0; 
+        public int height(Node root) {
+            if (root == null) {
+                return 0;
             }
 
-            int currHeight = Math.max(height(root.left), height(root.right)) + 1; 
-            return currHeight; 
+            int currHeight = Math.max(height(root.left), height(root.right)) + 1;
+            return currHeight;
+        }
+
+        // Recursive method to do this
+        public void kLevel(Node root, int level, int k) {
+            if (root == null) {
+                return;
+            }
+
+            if (level == k) {
+                System.out.print(root.data + " ");
+                return;
+            }
+
+            // otherwise
+            kLevel(root.left, level + 1, k);
+            kLevel(root.right, level + 1, k);
+
+            return;
+        }
+
+        // iterative method - using level order traversal
+
+        public void kthLevelIterative(Node root, int k) {
+            Queue<Node> q = new LinkedList<>();
+            q.add(root);
+            q.add(null);
+            int level = 1;
+            while (!q.isEmpty()) {
+                Node curr = q.poll();
+
+                if (curr == null) {
+                    level++;
+                    if (!q.isEmpty()) {
+
+                        q.add(curr);
+                    }
+                }
+
+                else {
+                    if (level == k) {
+                        System.out.print(curr.data + " ");
+                    }
+
+                    else {
+                        if (curr.left != null) {
+                            q.add(curr.left);
+                        }
+                        if (curr.right != null) {
+                            q.add(curr.right);
+                        }
+                    }
+                }
+            }
         }
     }
 
     public static void main(String[] args) {
-        int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
+        int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, 10, 12, -1, -1, 15, -1, -1, -1 };
         BinaryTree bt = new BinaryTree();
         Node root = bt.buildTree(nodes);
 
@@ -125,6 +175,11 @@ class BinaryTreeBuild {
         bt.postOrder(root);
         System.out.println();
         bt.levelOrder(root);
-        System.out.println("Height of the tree is : "+bt.height(root));
+        System.out.println("Height of the tree is : " + bt.height(root));
+
+        System.out.println("Kth level of binary tree: ");
+        bt.kLevel(root, 1, 2);
+        System.out.println();
+        bt.kthLevelIterative(root, 3);
     }
 }
