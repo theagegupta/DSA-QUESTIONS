@@ -20,7 +20,8 @@ class BinaryTreeBuild {
     static class BinaryTree {
         int idx = -1; // to track the index of the nodes array
 
-        public Node buildTree(int nodes[]) {
+        public Node buildTree(int nodes[]) 
+        {
             idx++;
 
             if (nodes[idx] == -1) {
