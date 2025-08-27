@@ -20,8 +20,7 @@ class BinaryTreeBuild {
     static class BinaryTree {
         int idx = -1; // to track the index of the nodes array
 
-        public Node buildTree(int nodes[]) 
-        {
+        public Node buildTree(int nodes[]) {
             idx++;
 
             if (nodes[idx] == -1) {
@@ -140,7 +139,6 @@ class BinaryTreeBuild {
                 if (curr == null) {
                     level++;
                     if (!q.isEmpty()) {
-
                         q.add(curr);
                     }
                 }
@@ -170,17 +168,17 @@ class BinaryTreeBuild {
 
         // System.out.println(root.data);
         bt.preOrder(root);
-        System.out.println();
-        bt.inOrder(root);
-        System.out.println();
-        bt.postOrder(root);
-        System.out.println();
-        bt.levelOrder(root);
-        System.out.println("Height of the tree is : " + bt.height(root));
+        // System.out.println();
+        // bt.inOrder(root);
+        // System.out.println();
+        // bt.postOrder(root);
+        // System.out.println();
+        // bt.levelOrder(root);
+        // System.out.println("Height of the tree is : " + bt.height(root));
 
-        System.out.println("Kth level of binary tree: ");
-        bt.kLevel(root, 1, 2);
-        System.out.println();
-        bt.kthLevelIterative(root, 3);
+        // System.out.println("Kth level of binary tree: ");
+        // bt.kLevel(root, 1, 2);
+        // System.out.println();
+        // bt.kthLevelIterative(root, 3);
     }
 }
